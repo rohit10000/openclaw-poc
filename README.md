@@ -1,6 +1,6 @@
 # OpenClaw React POC
 
-Minimal React + TypeScript project bootstrapped with Vite that renders “Hello World” on the landing page.
+Creative React + JavaScript landing page bootstrapped with Vite. The home view greets visitors with a vibrant glassmorphism hero and highlight cards.
 
 ## Development
 

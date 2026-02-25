@@ -1,18 +1,155 @@
-.app {
+:root {
+  color-scheme: light dark;
+  font-family: 'Space Grotesk', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background-color: #05060a;
+  color: #f7f7f7;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+body {
+  margin: 0;
   min-height: 100vh;
+  background: radial-gradient(circle at top right, #2ec5ff33, transparent 45%),
+    radial-gradient(circle at 20% 20%, #ff7ab533, transparent 35%),
+    #05060a;
+}
+
+.app-shell {
+  position: relative;
+  min-height: 100vh;
+  padding: 4rem clamp(1.5rem, 4vw, 5rem) 6rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  gap: 2.5rem;
+  overflow: hidden;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(60px);
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.orb-one {
+  width: 380px;
+  height: 380px;
+  top: -120px;
+  right: -80px;
+  background: linear-gradient(135deg, #8c52ff, #ff7ab5);
+}
+
+.orb-two {
+  width: 260px;
+  height: 260px;
+  bottom: 10vh;
+  left: -60px;
+  background: linear-gradient(120deg, #2ec5ff, #24e0b8);
+}
+
+.hero-card {
+  position: relative;
+  padding: clamp(2rem, 4vw, 3.5rem);
+  border-radius: 32px;
+  background: rgba(9, 10, 17, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(22px);
+  max-width: 920px;
+}
+
+.badge {
+  display: inline-flex;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.15rem;
+  color: #8ef6ff;
+  padding-bottom: 0.8rem;
+}
+
+.hero-card h1 {
+  font-size: clamp(2.5rem, 5vw, 4.2rem);
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.hero-card h1 span {
+  color: #8c52ff;
+}
+
+.lede {
+  max-width: 60ch;
+  opacity: 0.78;
+  font-size: 1.1rem;
+}
+
+.cta-row {
+  display: flex;
   gap: 1rem;
-  text-align: center;
+  margin-top: 2rem;
+  flex-wrap: wrap;
 }
 
-h1 {
-  font-size: 3rem;
+.primary-btn,
+.ghost-btn {
+  border-radius: 999px;
+  font-size: 1rem;
+  padding: 0.85rem 1.8rem;
+  border: none;
+  cursor: pointer;
+  transition: transform 160ms ease, box-shadow 160ms ease;
 }
 
-p {
-  font-size: 1.25rem;
-  color: #a1a1aa;
+.primary-btn {
+  background: linear-gradient(135deg, #ff7ab5, #8c52ff);
+  color: white;
+  box-shadow: 0 10px 30px rgba(140, 82, 255, 0.45);
+}
+
+.ghost-btn {
+  background: transparent;
+  color: #f7f7f7;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.primary-btn:hover,
+.ghost-btn:hover {
+  transform: translateY(-2px);
+}
+
+.highlights {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.highlight-card {
+  padding: 1.5rem;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+}
+
+.highlight-card h3 {
+  margin: 0 0 0.6rem;
+  font-size: 1.15rem;
+}
+
+.highlight-card p {
+  margin: 0;
+  opacity: 0.7;
+}
+
+@media (max-width: 600px) {
+  .hero-card {
+    padding: 2rem;
+  }
+
+  .cta-row {
+    flex-direction: column;
+  }
 }
