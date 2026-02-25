@@ -6,7 +6,7 @@ Creative React + JavaScript landing page bootstrapped with Vite. The home view g
 
 ```bash
 npm install
-npm run dev
+npm start
 ```
 
 ## Production Build
