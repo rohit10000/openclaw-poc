@@ -15,7 +15,7 @@ function App() {
       <header className="hero-card">
         <p className="badge">openclaw poc · react + javascript</p>
         <h1>
-          Hello, <span>World</span> 👋
+          Hello, <span>Rohit</span> 👋
         </h1>
         <p className="lede">
           A splash of color, soft glass textures, and a friendly greeting to prove the stack is wired up.
