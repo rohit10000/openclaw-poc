@@ -487,6 +487,38 @@ textarea {
   text-decoration: none;
 }
 
+.art-feature {
+  padding: 2rem;
+  background: var(--surface);
+  border-radius: 28px;
+  border: 1px solid var(--border);
+  box-shadow: 0 20px 45px rgba(7, 16, 45, 0.05);
+}
+
+.art-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.art-info ul {
+  padding-left: 1.2rem;
+  color: var(--muted);
+}
+
+.art-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.art-preview img {
+  border-radius: 30px;
+  box-shadow: 0 30px 60px rgba(12, 17, 35, 0.2);
+}
+
 @media (max-width: 900px) {
   .cart-content {
     grid-template-columns: 1fr;

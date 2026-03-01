@@ -1,4 +1,5 @@
 import './App.css';
+import animeLemon from './assets/anime-lemon.png';
 
 const formatINR = (value) => `₹${value.toLocaleString('en-IN')}`;
 
@@ -317,6 +318,37 @@ function App() {
               </label>
               <button className="btn primary">Pay Now</button>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="art-feature">
+        <div className="section-heading">
+          <h2>Curated Visuals</h2>
+          <p>Editorial artwork inspired by our latest shoot, ready for landing pages or press drops.</p>
+        </div>
+        <div className="art-grid">
+          <div className="art-info">
+            <p className="eyebrow">Art Drop · limited run</p>
+            <h3>Neon Citrus Study</h3>
+            <p>
+              Anime-style illustration showcasing the raw textures of a lemon resting against a monsoon-washed concrete
+              floor. Use it across hero banners, lookbooks, or as ambient brand art.
+            </p>
+            <ul>
+              <li>Format: PNG · 1024 × 1024</li>
+              <li>Palette: Citrus yellow, slate grey, maroon</li>
+              <li>Usage: Homepage hero, editorial blog, campaign teasers</li>
+            </ul>
+            <div className="art-actions">
+              <a className="btn primary" href={animeLemon} download>
+                Download Asset
+              </a>
+              <button className="btn secondary">Set as Hero Art</button>
+            </div>
+          </div>
+          <div className="art-preview">
+            <img src={animeLemon} alt="Anime style lemon artwork" />
           </div>
         </div>
       </section>
