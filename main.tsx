@@ -58,7 +58,7 @@ const TESTIMONIALS = [
   },
 ];
 
-function StarRating({ count }) {
+function StarRating({ count }: { count: number }) {
   return (
     <div style={{ color: "#f59e0b", fontSize: 18, marginBottom: 6 }}>
       {"★".repeat(count)}
@@ -66,7 +66,7 @@ function StarRating({ count }) {
   );
 }
 
-function useScrollReveal(ref) {
+function useScrollReveal(ref: React.RefObject<HTMLDivElement | null>) {
   const [visible, setVisible] = useState(false);
   useEffect(() => {
     const obs = new IntersectionObserver(
@@ -79,7 +79,7 @@ function useScrollReveal(ref) {
   return visible;
 }
 
-function RevealSection({ children, style = {} }) {
+function RevealSection({ children, style = {} }: { children: React.ReactNode; style?: React.CSSProperties }) {
   const ref = useRef(null);
   const visible = useScrollReveal(ref);
   return (
@@ -110,12 +110,12 @@ export default function App() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const scrollTo = (id) => {
+  const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
     setNavOpen(false);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitted(true);
     setFormData({ name: "", phone: "", message: "" });
@@ -420,7 +420,7 @@ export default function App() {
                     width="100%"
                     height="240"
                     style={{ border: 0 }}
-                    allowFullScreen=""
+                    allowFullScreen
                     loading="lazy"
                   />
                 </div>
@@ -481,8 +481,8 @@ export default function App() {
               <div style={{ fontFamily: "'Nunito',sans-serif", fontWeight: 800, fontSize: 13, color: "#a5d6a7", letterSpacing: 2, textTransform: "uppercase", marginBottom: 16 }}>Quick Links</div>
               {NAV_LINKS.map(l => (
                 <div key={l} style={{ fontFamily: "'Nunito',sans-serif", fontSize: 14, marginBottom: 10, cursor: "pointer", transition: "color .2s" }} onClick={() => scrollTo(l.toLowerCase())}
-                  onMouseEnter={e => e.target.style.color = "#a5d6a7"}
-                  onMouseLeave={e => e.target.style.color = "rgba(255,255,255,.7)"}
+                  onMouseEnter={e => (e.target as HTMLElement).style.color = "#a5d6a7"}
+                  onMouseLeave={e => (e.target as HTMLElement).style.color = "rgba(255,255,255,.7)"}
                 >{l}</div>
               ))}
             </div>
